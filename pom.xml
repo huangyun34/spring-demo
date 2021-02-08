@@ -45,6 +45,7 @@
       <optional>true</optional>
       <version>1.18.18</version>
     </dependency>
+    <!-- 嵌入式tomcat-->
     <dependency>
       <groupId>org.apache.tomcat.embed</groupId>
       <artifactId>tomcat-embed-core</artifactId>
