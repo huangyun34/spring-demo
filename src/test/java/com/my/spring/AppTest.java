@@ -36,7 +36,7 @@ public class AppTest
     @Test
     public void test2() {
         ExecutorService executorService = Executors.newCachedThreadPool();
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/resources/spring.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring.xml");
         final TService tService = (TService) context.getBean("TService");
         for (int i = 0; i < 100; i++) {
             executorService.submit(new Runnable() {
@@ -66,7 +66,7 @@ public class AppTest
     }
     @Test
     public void test3() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/resources/spring.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring.xml");
         A a = (A) context.getBean("a");
         a.hallo();
     }
