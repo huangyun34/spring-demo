@@ -28,7 +28,7 @@ public class AppTest
 
     @Test
     public void test1() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/resources/spring.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/spring.xml");
         SiChuan siChuan = (SiChuan) context.getBean("siChuan");
         System.out.println(siChuan.getDesc());
     }
