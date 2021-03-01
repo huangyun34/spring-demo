@@ -52,9 +52,14 @@ public class ZeroConfig implements WebMvcConfigurer {
 //
 //    }
 //
+
 //    @Override
 //    public void addCorsMappings(CorsRegistry registry) {
-//
+//        registry.addMapping("/**")
+//                .allowedOriginPatterns("*")
+//                .allowCredentials(true)
+//                .allowedMethods("GET","POST","OPTIONS","DELETE")
+//                .maxAge(3600);
 //    }
 //
 //    @Override

@@ -1,5 +1,6 @@
 package com.my.spring.zeroconfig;
 
+import com.my.spring.cors.CrossFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.Filter;
@@ -28,6 +29,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
     @Override
     protected Filter[] getServletFilters() {
+        //注释，有限使用拦截器解决跨域问题
+//        return new Filter[]{new CrossFilter()};
         return super.getServletFilters();
     }
 }
