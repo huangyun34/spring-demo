@@ -1,6 +1,9 @@
 package com.my.spring.zeroconfig;
 
 import com.my.spring.interceptors.Interceptor1;
+import com.my.spring.interceptors.Interceptor2;
+import com.my.spring.interceptors.Interceptor3;
+import com.my.spring.interceptors.InterceptorSimple;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
 
@@ -38,7 +41,9 @@ public class ZeroConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new Interceptor1()).addPathPatterns("/**").excludePathPatterns("/t");
+        registry.addInterceptor(new Interceptor1()).addPathPatterns("/**").excludePathPatterns("/t").order(2);
+        registry.addInterceptor(new Interceptor2(new InterceptorSimple())).addPathPatterns("/**").excludePathPatterns("/t").order(3);
+        registry.addWebRequestInterceptor(new Interceptor3()).addPathPatterns("/**").excludePathPatterns("/t").order(1);
     }
 
     //
